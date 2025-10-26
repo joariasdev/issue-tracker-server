@@ -1,8 +1,11 @@
 const express = require('express');
-const app = express();
+const cors = require('cors');
 const pool = require('./db');
+const app = express();
 
 const PORT = process.env.PORT || 2500;
+
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send("Issue Tracker")
